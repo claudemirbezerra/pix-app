@@ -1,0 +1,74 @@
+:host {
+  display: contents;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+  background: color-mix(in srgb, var(--color-primary) 72%, transparent);
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  width: 100%;
+  max-width: calc(var(--spacing-xl) * 16);
+  max-height: 100%;
+  padding: var(--spacing-xl);
+  overflow: auto;
+  border: var(--spacing-base) solid light-dark(var(--color-primary), var(--color-error));
+  border-radius: var(--spacing-md);
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  box-shadow: 0 var(--spacing-base) var(--spacing-lg)
+    color-mix(in srgb, var(--color-primary) 35%, transparent);
+}
+
+.dialog:focus-visible {
+  outline: var(--spacing-base) solid var(--color-text);
+  outline-offset: var(--spacing-base);
+}
+
+h2 {
+  margin: 0;
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: var(--spacing-lg);
+  font-weight: 700;
+}
+
+p {
+  margin: 0;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--spacing-md);
+}
+
+button {
+  align-self: flex-end;
+  padding: var(--spacing-md) var(--spacing-xl);
+  border: none;
+  border-radius: var(--spacing-sm);
+  background: var(--color-error);
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: var(--spacing-md);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: color-mix(in srgb, var(--color-error) 82%, var(--color-primary));
+}
+
+button:focus-visible {
+  outline: var(--spacing-base) solid var(--color-text);
+  outline-offset: var(--spacing-base);
+}

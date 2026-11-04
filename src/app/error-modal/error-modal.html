@@ -1,0 +1,17 @@
+@if (visivel()) {
+  <div class="overlay">
+    <div
+      #dialog
+      class="dialog"
+      role="alertdialog"
+      aria-modal="true"
+      tabindex="-1"
+      [attr.aria-labelledby]="titleId"
+      [attr.aria-describedby]="messageId"
+    >
+      <h2 [id]="titleId">{{ title() }}</h2>
+      <p [id]="messageId">{{ message() }}</p>
+      <button type="button" (click)="fechar($event)">Fechar</button>
+    </div>
+  </div>
+}
