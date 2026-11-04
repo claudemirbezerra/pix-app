@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Comprovante de Transferência Pix - Pix Instantâneo</title>
+<!-- Google Fonts: Hanken Grotesk & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed": "#001e2c",
+            "primary": "#cdffdc",
+            "surface-bright": "#313852",
+            "tertiary-fixed": "#c4e7ff",
+            "surface-dim": "#0a122a",
+            "on-primary-fixed-variant": "#005231",
+            "on-tertiary": "#00354a",
+            "on-primary": "#003920",
+            "tertiary": "#e8f5ff",
+            "surface-container-high": "#212942",
+            "inverse-primary": "#006d42",
+            "error-container": "#93000a",
+            "surface-container-lowest": "#050d25",
+            "primary-container": "#00f59b",
+            "on-secondary-fixed": "#002113",
+            "surface-container-low": "#131a33",
+            "on-secondary-container": "#00311f",
+            "on-error-container": "#ffdad6",
+            "secondary-fixed-dim": "#4edea3",
+            "on-error": "#690005",
+            "primary-fixed": "#53ffab",
+            "on-tertiary-container": "#006488",
+            "secondary": "#4edea3",
+            "surface-container": "#171e37",
+            "surface": "#0a122a",
+            "inverse-surface": "#dbe1ff",
+            "surface-variant": "#2c344d",
+            "primary-fixed-dim": "#00e38f",
+            "tertiary-container": "#a8deff",
+            "background": "#0a122a",
+            "on-secondary-fixed-variant": "#005236",
+            "on-secondary": "#003824",
+            "on-primary-fixed": "#002111",
+            "tertiary-fixed-dim": "#7bd0ff",
+            "on-background": "#dbe1ff",
+            "secondary-container": "#00a572",
+            "secondary-fixed": "#6ffbbe",
+            "surface-tint": "#00e38f",
+            "on-primary-container": "#006b41",
+            "on-tertiary-fixed-variant": "#004c69",
+            "on-surface-variant": "#b9cbbd",
+            "outline": "#849588",
+            "error": "#ffb4ab",
+            "surface-container-highest": "#2c344d",
+            "outline-variant": "#3b4a3f",
+            "inverse-on-surface": "#282f49",
+            "on-surface": "#dbe1ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "2rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2.5rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Hanken Grotesk"],
+            "code-md": ["JetBrains Mono"],
+            "body-sm": ["Hanken Grotesk"],
+            "label-sm": ["Hanken Grotesk"],
+            "headline-md": ["Hanken Grotesk"],
+            "title-md": ["Hanken Grotesk"],
+            "display-sm": ["Hanken Grotesk"],
+            "body-md": ["Hanken Grotesk"],
+            "display-lg": ["Hanken Grotesk"],
+            "label-md": ["Hanken Grotesk"],
+            "code-sm": ["JetBrains Mono"],
+            "body-lg": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "code-md": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "title-md": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "display-sm": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "code-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-emerald-glow {
+      box-shadow: 0 0 60px -15px rgba(0, 245, 155, 0.18), 0 24px 48px -12px rgba(3, 7, 18, 0.7);
+    }
+    .badge-glow {
+      box-shadow: 0 0 24px rgba(0, 245, 155, 0.35);
+    }
+    .copy-success {
+      color: #00f59b !important;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col justify-between selection:bg-primary-container selection:text-on-secondary-container">
+<!-- TOP APP BAR -->
+<header class="bg-surface-container-lowest dark:bg-surface-container-lowest border-b border-outline-variant/30 sticky top-0 z-50 transition-colors">
+<div class="w-full max-w-7xl mx-auto flex items-center justify-between px-8 h-16">
+<!-- Brand & Security Tag -->
+<div class="flex items-center gap-6">
+<a class="text-headline-md font-headline-md font-bold tracking-tight text-on-surface dark:text-on-surface flex items-center gap-2" href="#">
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-surface-container border border-outline-variant/40 text-primary-container">
+<span class="material-symbols-outlined text-[20px]" data-icon="sync_alt" data-weight="fill" style="font-variation-settings: 'FILL' 1;">sync_alt</span>
+</span>
+<span>Pix Instantâneo</span>
+</a>
+<!-- Transaction Live Security Badge -->
+<div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container border border-outline-variant/40 text-on-surface-variant font-label-sm text-label-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary-container"></span>
+</span>
+<span>Transação Segura &amp; Autenticada</span>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-primary dark:hover:text-primary transition-colors duration-200" href="#">Início</a>
+<a class="text-primary dark:text-primary font-semibold border-b-2 border-primary-container pb-1 transition-colors duration-200" href="#">Transferências</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-primary dark:hover:text-primary transition-colors duration-200" href="#">Extrato</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-primary dark:hover:text-primary transition-colors duration-200" href="#">Ajuda</a>
+</nav>
+<!-- Trailing Controls -->
+<div class="flex items-center gap-4">
+<button class="hidden sm:inline-flex text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md py-1 px-3 rounded-lg border border-outline-variant/30 hover:border-outline-variant">
+          Suporte
+        </button>
+<div class="flex items-center gap-1">
+<button aria-label="Notificações" class="p-2 text-on-surface-variant hover:text-primary transition-colors duration-200 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+</button>
+<button aria-label="Segurança do Sistema" class="p-2 text-on-surface-variant hover:text-primary transition-colors duration-200 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined text-[20px]" data-icon="shield">shield</span>
+</button>
+</div>
+<div class="h-6 w-px bg-outline-variant/30 hidden sm:block"></div>
+<!-- User Profile Entity -->
+<div class="flex items-center gap-3 pl-1">
+<div class="relative">
+<img alt="Foto de perfil do usuário Erick" class="w-8 h-8 rounded-full border border-primary-container/40 object-cover" data-alt="A refined portrait of a corporate professional user Erick with warm studio cinematic lighting, sharp focus, natural demeanor, dark backdrop perfectly harmonizing with fintech slate navy environment, contemporary editorial aesthetics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJwkJDGcxOWFNC4_81rXu-IxxIr33SrYgqAWOo-jvMSc0r4ITxYi5sTWpFrANiMUAdJx6G2s_umXv1s01_wGBTO7zerD_gnbiSj-EUVjcpLlZnwgV0TB6tr4R0WEMHmUOSgLyixDAeedFR_gwgKZ1DTLtsqWFF5wwvI-aKDWF1_wHcL8ltE15qEBVQgFozwaL6O17SooQoxH_4h3bE_csg32dgjUfB8BTLbf1LUxrH"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="hidden xl:flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface leading-tight font-medium">Erick S.</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant/80">Conta Ativa</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN CANVAS -->
+<main class="flex-grow flex items-center justify-center py-10 px-4 sm:px-6 relative overflow-hidden">
+<!-- Background Atmospheric Lighting -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[720px] bg-primary-container/5 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+<div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] bg-secondary-container/10 rounded-full blur-[90px] pointer-events-none -z-10"></div>
+<!-- PRIMARY RECEIPT CARD (640px Max Width Standard) -->
+<div class="w-full max-w-[640px] bg-surface-container-low border border-outline-variant/40 rounded-xl custom-emerald-glow relative backdrop-blur-sm transition-all overflow-hidden">
+<!-- Top Decorative Status Bar -->
+<div class="h-1.5 w-full bg-gradient-to-r from-primary-container via-secondary to-primary-container"></div>
+<div class="p-6 sm:p-8 space-y-6">
+<!-- Header Status Cluster -->
+<div class="flex flex-col items-center text-center pt-2">
+<!-- Animated / High-Trust Icon Badge -->
+<div class="relative flex items-center justify-center mb-4">
+<div class="w-16 h-16 rounded-full bg-surface-container border-2 border-primary-container flex items-center justify-center badge-glow text-primary-container ring-4 ring-primary-container/15">
+<span class="material-symbols-outlined text-[34px]" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+<!-- Pix Formal Chip -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container/10 border border-primary-container/30 text-primary-container font-label-sm text-label-sm tracking-widest uppercase mb-3">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>Comprovante de Transferência</span>
+</div>
+<!-- Title & Affirmation Subtitle -->
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight mb-1">
+            Transferência Pix Concluída
+          </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+            O dinheiro já foi enviado com sucesso para a conta de destino indicada.
+          </p>
+</div>
+<!-- High-Impact Monetary Display Section -->
+<div class="bg-surface-container rounded-lg p-5 border border-outline-variant/30 text-center relative overflow-hidden">
+<div class="absolute -right-8 -top-8 w-24 h-24 bg-primary-container/5 rounded-full blur-xl pointer-events-none"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase block mb-1">Valor Transferido</span>
+<div class="flex items-baseline justify-center gap-1.5">
+<span class="font-headline-md text-headline-md text-primary-container font-semibold">R$</span>
+<span class="font-display-lg text-display-lg font-bold tracking-tight text-on-surface">150,00</span>
+</div>
+<div class="mt-2 inline-flex items-center gap-1 text-on-surface-variant font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-[14px] text-primary-container" data-icon="lock">lock</span>
+<span>Liquidação imediata via SPI / Banco Central</span>
+</div>
+</div>
+<!-- Granular Transaction Entities Grid -->
+<div class="space-y-4">
+<!-- Destinatário (Recipient) Panel -->
+<div class="bg-surface-container/60 rounded-lg p-4 border border-outline-variant/25">
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-outline-variant/20">
+<span class="font-label-md text-label-md text-primary font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary-container" data-icon="arrow_upward">arrow_upward</span>
+                Dados do Destinatário
+              </span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-outline-variant/30">Conta Creditada</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4">
+<div>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Nome Completo</span>
+<span class="font-body-md text-body-md font-medium text-on-surface">Erick S.</span>
+</div>
+<div>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Chave Pix Mascarada</span>
+<span class="font-code-md text-code-md text-on-surface">***.***.892-00</span>
+</div>
+<div>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Instituição Financeira</span>
+<span class="font-body-md text-body-md font-medium text-on-surface">Nu Pagamentos S.A. (Nubank)</span>
+</div>
+<div>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Agência e Conta</span>
+<span class="font-body-md text-body-md text-on-surface">Agência 0001 • C/C 4829104-2</span>
+</div>
+</div>
+</div>
+<!-- Origem (Sender) Panel -->
+<div class="bg-surface-container/60 rounded-lg p-4 border border-outline-variant/25">
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-outline-variant/20">
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="account_balance_wallet">account_balance_wallet</span>
+                Dados de Origem
+              </span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-outline-variant/30">Conta Debitada</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4">
+<div>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Nome do Pagador</span>
+<span class="font-body-md text-body-md font-medium text-on-surface">Erick Silva</span>
+</div>
+<div>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Instituição de Origem</span>
+<span class="font-body-md text-body-md font-medium text-on-surface">Pix Instantâneo Payments</span>
+</div>
+<div>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Conta de Débito</span>
+<span class="font-body-md text-body-md text-on-surface">Agência 0001 • C/C 109283-9</span>
+</div>
+<div>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Tipo da Transação</span>
+<span class="font-body-md text-body-md text-on-surface">Pix Transferência (Normal)</span>
+</div>
+</div>
+</div>
+<!-- Perforated Technical Separation -->
+<div class="border-t border-dashed border-outline-variant/40 pt-2"></div>
+<!-- Timestamps & Cryptographic Identifiers Row -->
+<div class="bg-surface-container-lowest rounded-lg p-4 border border-outline-variant/30 space-y-3">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Data e Horário da Operação</span>
+<span class="font-code-md text-code-md text-on-surface font-medium">24 de Outubro de 2025 às 14:32:18</span>
+</div>
+<!-- E2E Identification with Interactive Instant Copy -->
+<div class="flex flex-col gap-1.5 pt-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">ID da Transação (End-to-End)</span>
+<span class="font-label-sm text-label-sm text-primary-container opacity-0 transition-opacity duration-200" id="copy-status">Copiado!</span>
+</div>
+<div class="flex items-center justify-between gap-2 bg-surface-container px-3 py-2 rounded border border-outline-variant/30 hover:border-primary-container/40 transition-colors">
+<code class="font-code-md text-code-md text-primary tracking-tight truncate select-all" id="tx-id-text">
+                  E00038166202510241432a9fbc8102
+                </code>
+<button class="p-1 hover:text-primary-container text-on-surface-variant transition-colors flex items-center justify-center shrink-0" id="copy-btn" title="Copiar ID da transação">
+<span class="material-symbols-outlined text-[18px]" data-icon="content_copy" id="copy-icon">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Utility Actions (Secondary Controls) -->
+<div class="grid grid-cols-2 gap-3 pt-2">
+<button class="flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface border border-outline-variant/40 hover:border-outline-variant transition-all font-label-md text-label-md group active:scale-95">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-primary transition-colors" data-icon="download">download</span>
+<span>Baixar PDF</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface border border-outline-variant/40 hover:border-outline-variant transition-all font-label-md text-label-md group active:scale-95">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-primary transition-colors" data-icon="share">share</span>
+<span>Compartilhar</span>
+</button>
+</div>
+<!-- Large Wide Primary Action CTA -->
+<div class="pt-2">
+<a class="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-lg bg-primary-container hover:bg-secondary text-on-primary-container font-headline-md text-body-lg font-bold tracking-tight shadow-lg shadow-primary-container/20 hover:shadow-primary-container/40 transition-all duration-200 active:scale-95 text-center" href="#">
+<span>Voltar ao início</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Micro Assurance Text -->
+<p class="text-center font-body-sm text-body-sm text-on-surface-variant/70 pt-1">
+          Este comprovante possui autenticação digital registrada e validade jurídica plena nos termos da Resolução BCB nº 1/2020.
+        </p>
+</div>
+</div>
+</main>
+<!-- WEB FOOTER -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20 transition-colors">
+<div class="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-8 py-6 gap-4">
+<!-- Brand & Regulatory Text -->
+<div class="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left">
+<span class="text-title-md font-title-md font-semibold text-on-surface dark:text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary-container" data-icon="assured_workload">assured_workload</span>
+          Pix
+        </span>
+<span class="hidden md:inline text-outline-variant">•</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">
+          © 2025 Banco Central do Brasil • Protocolo de Transferência Instantânea Autenticado
+        </span>
+</div>
+<!-- Compliance & Resource Links -->
+<div class="flex flex-wrap items-center justify-center gap-6 text-label-sm font-label-sm">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-normal hover:text-primary dark:hover:text-primary transition-colors duration-150" href="#">Termos de Segurança</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-normal hover:text-primary dark:hover:text-primary transition-colors duration-150" href="#">Políticas de Privacidade</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-normal hover:text-primary dark:hover:text-primary transition-colors duration-150" href="#">Regulamento Pix</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-normal hover:text-primary dark:hover:text-primary transition-colors duration-150" href="#">Canal de Atendimento</a>
+</div>
+</div>
+</footer>
+<!-- Micro Interaction Script (Vanilla JS for E2E Copy UX) -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const copyBtn = document.getElementById('copy-btn');
+      const txText = document.getElementById('tx-id-text');
+      const copyStatus = document.getElementById('copy-status');
+      const copyIcon = document.getElementById('copy-icon');
+
+      if (copyBtn && txText && copyStatus && copyIcon) {
+        copyBtn.addEventListener('click', async () => {
+          const textToCopy = txText.textContent.trim();
+          try {
+            await navigator.clipboard.writeText(textToCopy);
+            copyStatus.classList.remove('opacity-0');
+            copyIcon.textContent = 'check';
+            copyIcon.classList.add('copy-success');
+
+            setTimeout(() => {
+              copyStatus.classList.add('opacity-0');
+              copyIcon.textContent = 'content_copy';
+              copyIcon.classList.remove('copy-success');
+            }, 2500);
+          } catch (err) {
+            // Fallback selection if clipboard API is restricted
+            const range = document.createRange();
+            range.selectNode(txText);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+          }
+        });
+      }
+    });
+  </script>
+</body></html>

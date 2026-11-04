@@ -1,0 +1,153 @@
+<section class="receipt-page" aria-labelledby="receipt-title">
+  <article class="receipt-card">
+    <div class="status-bar" aria-hidden="true"></div>
+
+    <div class="receipt-body">
+      <header class="receipt-header">
+        <div class="status-badge" aria-hidden="true">
+          <span class="material-symbols-outlined icon-lg icon-fill">check</span>
+        </div>
+
+        <p class="chip">
+          <span class="material-symbols-outlined icon-sm icon-fill">verified</span>
+          Comprovante de Transferência
+        </p>
+
+        <h1 id="receipt-title">Transferência Pix Concluída</h1>
+        <p class="subtitle">
+          O dinheiro já foi enviado com sucesso para a conta de destino indicada.
+        </p>
+      </header>
+
+      <div class="amount-panel">
+        <span class="amount-label">Valor Transferido</span>
+        <p class="amount">
+          <span class="currency">R$</span>
+          <span class="value">{{ valorFormatado() }}</span>
+        </p>
+        <p class="settlement">
+          <span class="material-symbols-outlined icon-sm">lock</span>
+          Liquidação imediata via SPI / Banco Central
+        </p>
+      </div>
+
+      <div class="panels">
+        <section class="panel" aria-labelledby="destinatario-heading">
+          <div class="panel-heading">
+            <h2 id="destinatario-heading">
+              <span class="material-symbols-outlined icon-sm accent">arrow_upward</span>
+              Dados do Destinatário
+            </h2>
+            <span class="tag">Conta Creditada</span>
+          </div>
+
+          <dl class="details-grid">
+            <div>
+              <dt>Nome Completo</dt>
+              <dd>{{ nome() }}</dd>
+            </div>
+            <div>
+              <dt>Chave Pix Mascarada</dt>
+              <dd class="mono">{{ chaveMascarada }}</dd>
+            </div>
+            <div>
+              <dt>Instituição Financeira</dt>
+              <dd>{{ instituicaoDestino }}</dd>
+            </div>
+            <div>
+              <dt>Agência e Conta</dt>
+              <dd>{{ contaDestino }}</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section class="panel" aria-labelledby="origem-heading">
+          <div class="panel-heading">
+            <h2 id="origem-heading" class="muted-heading">
+              <span class="material-symbols-outlined icon-sm">account_balance_wallet</span>
+              Dados de Origem
+            </h2>
+            <span class="tag">Conta Debitada</span>
+          </div>
+
+          <dl class="details-grid">
+            <div>
+              <dt>Nome do Pagador</dt>
+              <dd>{{ nomePagador }}</dd>
+            </div>
+            <div>
+              <dt>Instituição de Origem</dt>
+              <dd>{{ instituicaoOrigem }}</dd>
+            </div>
+            <div>
+              <dt>Conta de Débito</dt>
+              <dd>{{ contaOrigem }}</dd>
+            </div>
+            <div>
+              <dt>Tipo da Transação</dt>
+              <dd>{{ tipoTransacao }}</dd>
+            </div>
+          </dl>
+        </section>
+      </div>
+
+      <div class="separator" aria-hidden="true"></div>
+
+      <section class="meta-panel" aria-labelledby="meta-heading">
+        <h2 id="meta-heading" class="visually-hidden">Identificação da operação</h2>
+
+        <div class="meta-row">
+          <span>Data e Horário da Operação</span>
+          <time class="mono" datetime="2025-10-24T14:32:18">{{ dataOperacao }}</time>
+        </div>
+
+        <div class="e2e">
+          <div class="e2e-label">
+            <span>ID da Transação (End-to-End)</span>
+            <span class="copy-status" [class.visible]="copiado()" aria-live="polite">
+              @if (copiado()) {
+                Copiado!
+              }
+            </span>
+          </div>
+
+          <div class="e2e-box">
+            <code class="mono">{{ idTransacao }}</code>
+            <button
+              type="button"
+              class="icon-button"
+              title="Copiar ID da transação"
+              [attr.aria-label]="copiado() ? 'ID copiado' : 'Copiar ID da transação'"
+              (click)="copiarId()"
+            >
+              <span class="material-symbols-outlined icon-md" [class.success]="copiado()">
+                {{ copiado() ? 'check' : 'content_copy' }}
+              </span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <div class="actions">
+        <button type="button" class="secondary-action">
+          <span class="material-symbols-outlined icon-md">download</span>
+          Baixar PDF
+        </button>
+        <button type="button" class="secondary-action">
+          <span class="material-symbols-outlined icon-md">share</span>
+          Compartilhar
+        </button>
+      </div>
+
+      <a class="primary-action" routerLink="/">
+        <span>Voltar ao início</span>
+        <span class="material-symbols-outlined icon-md">arrow_forward</span>
+      </a>
+
+      <p class="assurance">
+        Este comprovante possui autenticação digital registrada e validade jurídica plena
+        nos termos da Resolução BCB nº 1/2020.
+      </p>
+    </div>
+  </article>
+</section>
