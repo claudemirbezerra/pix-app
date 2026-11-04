@@ -1,3 +1,11 @@
+@if (erroLimiteAberto()) {
+  <app-error-modal
+    title="Limite Excedido"
+    message="Para sua segurança, transferências Pix acima de R$ 5.000,00 precisam ser aprovadas pelo gerente."
+    (closed)="fecharErroLimite()"
+  />
+}
+
 <form (submit)="confirmar($event)">
   <h1>Transferência Pix</h1>
 
