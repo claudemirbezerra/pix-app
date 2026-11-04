@@ -1,6 +1,14 @@
 <aside>
-  <nav>
-    <a routerLink="/pix">Pix</a>
+  <p>Pix App</p>
+  <nav aria-label="Principal">
+    <a
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      ariaCurrentWhenActive="page"
+    >
+      Pix
+    </a>
   </nav>
 </aside>
 <main>

@@ -3,6 +3,7 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 @Component({
   selector: 'app-pix-transfer',
   templateUrl: './pix-transfer.html',
+  styleUrl: './pix-transfer.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PixTransferComponent {
