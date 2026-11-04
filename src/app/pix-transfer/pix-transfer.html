@@ -1,0 +1,38 @@
+<form (submit)="confirmar($event)">
+  <label for="chave-pix">Chave Pix</label>
+  <input
+    #chavePixInput
+    id="chave-pix"
+    name="chavePix"
+    type="text"
+    [value]="chavePix()"
+    (input)="chavePix.set(chavePixInput.value)"
+    required
+  />
+
+  <label for="valor">Valor</label>
+  <input
+    #valorInput
+    id="valor"
+    name="valor"
+    type="number"
+    min="0.01"
+    step="0.01"
+    [value]="valor() ?? ''"
+    (input)="atualizarValor(valorInput.value)"
+    required
+  />
+
+  <label for="data-agendamento">Data de Agendamento</label>
+  <input
+    #dataAgendamentoInput
+    id="data-agendamento"
+    name="dataAgendamento"
+    type="date"
+    [value]="dataAgendamento()"
+    (input)="dataAgendamento.set(dataAgendamentoInput.value)"
+    required
+  />
+
+  <button type="submit">Confirmar</button>
+</form>
