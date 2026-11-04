@@ -6,51 +6,55 @@
   />
 }
 
-<form (submit)="confirmar($event)">
-  <h1>Transferência Pix</h1>
+@if (recibo(); as dados) {
+  <app-pix-receipt [valor]="dados.valor" [nome]="dados.nome" />
+} @else {
+  <form (submit)="confirmar($event)">
+    <h1>Transferência Pix</h1>
 
-  <div>
-    <label for="chave-pix">Chave Pix</label>
-    <input
-      #chavePixInput
-      id="chave-pix"
-      name="chavePix"
-      type="text"
-      autocomplete="off"
-      [value]="chavePix()"
-      (input)="chavePix.set(chavePixInput.value)"
-      required
-    />
-  </div>
+    <div>
+      <label for="chave-pix">Chave Pix</label>
+      <input
+        #chavePixInput
+        id="chave-pix"
+        name="chavePix"
+        type="text"
+        autocomplete="off"
+        [value]="chavePix()"
+        (input)="chavePix.set(chavePixInput.value)"
+        required
+      />
+    </div>
 
-  <div>
-    <label for="valor">Valor</label>
-    <input
-      #valorInput
-      id="valor"
-      name="valor"
-      type="number"
-      min="0.01"
-      step="0.01"
-      inputmode="decimal"
-      [value]="valor() ?? ''"
-      (input)="atualizarValor(valorInput.value)"
-      required
-    />
-  </div>
+    <div>
+      <label for="valor">Valor</label>
+      <input
+        #valorInput
+        id="valor"
+        name="valor"
+        type="number"
+        min="0.01"
+        step="0.01"
+        inputmode="decimal"
+        [value]="valor() ?? ''"
+        (input)="atualizarValor(valorInput.value)"
+        required
+      />
+    </div>
 
-  <div>
-    <label for="data-agendamento">Data de Agendamento</label>
-    <input
-      #dataAgendamentoInput
-      id="data-agendamento"
-      name="dataAgendamento"
-      type="date"
-      [value]="dataAgendamento()"
-      (input)="dataAgendamento.set(dataAgendamentoInput.value)"
-      required
-    />
-  </div>
+    <div>
+      <label for="data-agendamento">Data de Agendamento</label>
+      <input
+        #dataAgendamentoInput
+        id="data-agendamento"
+        name="dataAgendamento"
+        type="date"
+        [value]="dataAgendamento()"
+        (input)="dataAgendamento.set(dataAgendamentoInput.value)"
+        required
+      />
+    </div>
 
-  <button type="submit">Confirmar</button>
-</form>
+    <button type="submit">Confirmar</button>
+  </form>
+}
