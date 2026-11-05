@@ -1,0 +1,74 @@
+<section class="history-page" aria-labelledby="history-title">
+  <div class="history-shell">
+    <header class="history-header">
+      <div class="header-toolbar">
+        <button type="button" class="icon-button" aria-label="Voltar">
+          <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
+        </button>
+        <button type="button" class="icon-button" aria-label="Mais opções">
+          <span class="material-symbols-outlined" aria-hidden="true">more_vert</span>
+        </button>
+      </div>
+
+      <h1 id="history-title">Extrato Pix</h1>
+      <p class="header-subtitle">Confira suas últimas movimentações</p>
+    </header>
+
+    <div class="history-body">
+      <h2 class="section-label">Recentes</h2>
+
+      <ul class="pix-history-list" role="list">
+        @for (transaction of transactions(); track transaction.id) {
+          <li class="transaction-item">
+            <div class="transaction-main">
+              <span
+                class="transaction-icon"
+                [class.received]="transaction.type === 'received'"
+                [class.sent]="transaction.type === 'sent'"
+                aria-hidden="true"
+              >
+                <span class="material-symbols-outlined">
+                  {{ iconFor(transaction.type) }}
+                </span>
+              </span>
+
+              <div class="transaction-copy">
+                <p class="transaction-title">{{ transaction.title }}</p>
+                <time class="transaction-date">{{ transaction.date }}</time>
+              </div>
+            </div>
+
+            <p
+              class="transaction-amount"
+              [class.received]="transaction.type === 'received'"
+              [class.sent]="transaction.type === 'sent'"
+            >
+              {{ formatAmount(transaction) }}
+            </p>
+          </li>
+        }
+      </ul>
+
+      <button type="button" class="report-button">Gerar Novo Relatório</button>
+    </div>
+
+    <nav class="bottom-nav" aria-label="Navegação do extrato">
+      <button type="button" class="nav-item active" aria-current="page">
+        <span class="material-symbols-outlined" aria-hidden="true">home</span>
+        <span>Início</span>
+      </button>
+      <button type="button" class="nav-item">
+        <span class="material-symbols-outlined" aria-hidden="true">bar_chart</span>
+        <span>Extrato</span>
+      </button>
+      <button type="button" class="nav-item">
+        <span class="material-symbols-outlined" aria-hidden="true">credit_card</span>
+        <span>Cartões</span>
+      </button>
+      <button type="button" class="nav-item">
+        <span class="material-symbols-outlined" aria-hidden="true">person</span>
+        <span>Perfil</span>
+      </button>
+    </nav>
+  </div>
+</section>
